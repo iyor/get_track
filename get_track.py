@@ -23,6 +23,11 @@ while True:
                         offset=offset,
                         limit=50)
     tracks = results["tracks"]["items"]
+
+    if len(tracks) == 0:
+        print("Couldn't find that song :(")
+        sys.exit()
+
     for track in tracks:
         if track["name"] == song_name.lower():
             print(track["name"] + "  -  " + track["artists"][0]["name"])
