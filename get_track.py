@@ -14,7 +14,7 @@ print("ID:          " + client_id)
 print("Secret:      " + client_secret)
 print("-----------------------------------------------------------------")
 
-search_term = "\"" + '+'.join(sys.argv[1:]) + "\"".lower()
+search_term = "\"" + '+'.join(sys.argv[1:]).lower() + "\""
 
 offset = 0
 
@@ -29,7 +29,7 @@ while True:
         sys.exit()
 
     for track in tracks:
-        if track["name"] == song_name.lower():
+        if track["name"].lower() == song_name.lower():
             print(track["name"] + "  -  " + track["artists"][0]["name"])
             print(track["uri"])
             sys.exit()
